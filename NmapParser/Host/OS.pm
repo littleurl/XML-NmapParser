@@ -1,6 +1,6 @@
 # -------------------------------
-package XML::NmapParser::Host::OS; 
-use base "XML::NmapParser::Host";
+package NmapParser::Host::OS; 
+use base "NmapParser::Host";
 
 our $VERSION = "0.2.3";
 
@@ -9,9 +9,9 @@ use warnings;
 use Carp; 
 use Exporter;
 
-require XML::NmapParser;
+require NmapParser;
 
-my @ISA = qw(XML::NmapParser::Host::OS Exporter);
+my @ISA = qw(NmapParser::Host::OS Exporter);
 
 use vars qw($AUTOLOAD);
 # -------------------------------
@@ -30,13 +30,13 @@ sub initialize {
 }
 
 sub all {
-	use XML::NmapParser::Host::OS::osmatch; 
+	use NmapParser::Host::OS::osmatch; 
 	
 	my ($self) = @_;
 	my @ALL;
 	foreach ( @{$self->{stem}{osmatch}} ) {
 		# return an array of OS objects......
-		my $osmatch = XML::NmapParser::Host::OS::osmatch->new($_);
+		my $osmatch = NmapParser::Host::OS::osmatch->new($_);
 		push(@ALL,$osmatch);
 	}	
 	return @ALL;		 
@@ -51,14 +51,14 @@ sub fingerprint {
 }
 
 sub class { 
-	use XML::NmapParser::Host::OS::osclass; 
+	use NmapParser::Host::OS::osclass; 
 	
 	my ($self) = @_;
 	my @ALL;
 	if ( @{$self->{stem}{osmatch}{osclass}} ) { 
 		foreach ( @{$self->{stem}{osmatch}{osclass}} ) {
 			# return an array of OS objects......
-			my $osmatch = XML::NmapParser::Host::OS::osmatch->new($_);
+			my $osmatch = NmapParser::Host::OS::osmatch->new($_);
 			push(@ALL,$osmatch);
 		}			
 	}

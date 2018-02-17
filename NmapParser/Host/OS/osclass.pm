@@ -1,6 +1,6 @@
 # -------------------------------
-package XML::NmapParser::Host::OS::osclass; 
-use base XML::NmapParser::Host::OS;
+package NmapParser::Host::OS::osclass; 
+use base NmapParser::Host::OS;
 
 our $VERSION = "0.1.0a";
 
@@ -9,10 +9,10 @@ use warnings;
 use Carp; 
 use Exporter;
 
-use parent 'XML::NmapParser::Host'; 
-require XML::NmapParser;
+use parent 'NmapParser::Host'; 
+require NmapParser;
 
-my @ISA = qw(XML::NmapParser::Host::OS::osclass Exporter);
+my @ISA = qw(NmapParser::Host::OS::osclass Exporter);
 
 use vars qw($AUTOLOAD);
 # -------------------------------
