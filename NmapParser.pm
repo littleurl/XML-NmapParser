@@ -1,17 +1,18 @@
 # -------------------------------
-package XML::NmapParser; 
+package NmapParser; 
 
 use strict;
 use warnings;
 use Carp;
 use XML::LibXML;
 
-use Exporter qw(import);
+use Exporter;
 
 our $VERSION = "0.4.5 b";  
 use Exporter qw(import);
 
-my @ISA = "XML::NmapParser";
+my @ISA = qw(Exporter EXPORT); 
+
 use vars qw($AUTOLOAD);
 # -------------------------------
 
@@ -60,7 +61,8 @@ sub parse {
 			} 
 		} 
 	}
-	
+
+
 	#  need to add logic to get Verbose and debugging data.....
 	# 
 		
@@ -384,7 +386,7 @@ sub get_ips {
 
 sub get_host {
 	use XML::NmapParser::Host;
-	 
+	
 	my ($self,$hostIP) = @_;
 	my $host; 	
 	foreach ( @{$self->{parsed}{hosts}}) {
