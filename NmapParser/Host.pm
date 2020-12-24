@@ -1,17 +1,16 @@
 # -------------------------------
-package NmapParser::Host; 
+package XML::NmapParser::Host;
 
-our $VERSION = "0.2.1 d";
+
+our $VERSION = "0.2.2 a";
 
 use strict;
 use warnings;
 use Carp; 
 use Exporter;
-use parent 'NmapParser';
- 
-require NmapParser;
+use parent 'XML::NmapParser';
 
-my @ISA = qw(NmapParser::Host Exporter);
+my @ISA = qw(XML::NmapParser::Host Exporter);
 
 use vars qw($AUTOLOAD);
 

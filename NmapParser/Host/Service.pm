@@ -1,6 +1,6 @@
 # -------------------------------
-package NmapParser::Host::Service; 
-use base "NmapParser::Host";
+package XML::NmapParser::Host::Service; 
+use base "XML::NmapParser::Host";
 
 our $VERSION = "0.1.2";
 
@@ -9,10 +9,10 @@ use warnings;
 use Carp; 
 use Exporter;
 
-use parent 'NmapParser::Host'; 
-require NmapParser;
+# use parent 'XML::NmapParser::Host'; 
+# require XML::NmapParser;
 
-my @ISA = qw(NmapParser::Host::Service Exporter);
+my @ISA = qw(XML::NmapParser::Host::Service Exporter);
 
 use vars qw($AUTOLOAD);
 # -------------------------------
@@ -52,7 +52,7 @@ sub owner {
 
 
 sub scripts { 
-	use NmapParser::Host::Script; 
+	use XML::NmapParser::Host::Script; 
 	
 	my ($self,$name) = @_;
 	my @scripts;
@@ -60,7 +60,7 @@ sub scripts {
 	if ( defined($self->{stem}{scripts})) { 
 		foreach ( @{$self->{stem}{scripts}} ) {
 			# return an array of OS objects......
-			my $script = NmapParser::Host::Script->new($_);
+			my $script = XML::NmapParser::Host::Script->new($_);
 			push(@scripts,$script);
 		}
 	}	

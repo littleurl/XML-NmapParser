@@ -1,6 +1,6 @@
 # -------------------------------
-package NmapParser::Host::OS::osmatch; 
-use base NmapParser::Host::OS;
+package XML::NmapParser::Host::OS::osmatch; 
+use base XML::NmapParser::Host::OS;
 
 our $VERSION = "0.1.0a";
 
@@ -9,10 +9,10 @@ use warnings;
 use Carp; 
 use Exporter;
 
-use parent 'NmapParser::Host'; 
-require NmapParser;
+use parent 'XML::NmapParser::Host'; 
+require XML::NmapParser;
 
-my @ISA = qw(NmapParser::Host::OS::osmatch Exporter);
+my @ISA = qw(XML::NmapParser::Host::OS::osmatch Exporter);
 
 use vars qw($AUTOLOAD);
 # -------------------------------osmatch
@@ -56,13 +56,13 @@ sub line {
 } 
 
 sub osclass { 
-	use NmapParser::Host::OS::osclass; 
+	use XML::NmapParser::Host::OS::osclass; 
 	
 	my ($self) = @_;
 	my @ALL;
 	foreach ( @{$self->{OSmatch}{osclass}} ) {
 		# return an array of OS objects......
-		my $osclass = NmapParser::Host::OS::osclass->new($_);
+		my $osclass = XML::NmapParser::Host::OS::osclass->new($_);
  
 		push(@ALL,$osclass);
 	}	

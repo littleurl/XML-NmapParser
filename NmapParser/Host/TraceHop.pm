@@ -1,6 +1,6 @@
 # -------------------------------
-package NmapParser::Host::TraceHop; 
-use base "NmapParser::Host";
+package XML::NmapParser::Host::TraceHop; 
+use base "XML::NmapParser::Host";
 
 our $VERSION = "0.1.2";
 
@@ -9,10 +9,10 @@ use warnings;
 use Carp; 
 use Exporter;
 
-use parent 'NmapParser::Host'; 
-require NmapParser;
+use parent 'XML::NmapParser::Host'; 
+require XML::NmapParser;
 
-my @ISA = qw(NmapParser::Host::TraceHop Exporter);
+my @ISA = qw(XML::NmapParser::Host::TraceHop Exporter);
 
 use vars qw($AUTOLOAD);
 # -------------------------------
