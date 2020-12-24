@@ -1,5 +1,5 @@
 # -------------------------------
-package NmapParser; 
+package XML::NmapParser; 
 
 use strict;
 use warnings;
