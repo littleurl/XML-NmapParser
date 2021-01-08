@@ -75,3 +75,86 @@ sub output {
 	return $returnValue;	
 	
 }
+
+
+=head1 NAME
+
+NmapParser - parse nmap scan data with perl
+
+=head1 SYNOPSIS
+
+  use Nmap::Parser::Host::Script;
+  my $host = Nmap::Parser::Host::Script->new();
+
+=head1 DESCRIPTION
+
+=head1 OVERVIEW
+
+=head1 METHODS
+
+=head2 Nmap::Parser::Host::Service
+
+This object represents the information collected from a scanned host.
+
+
+=over 4
+
+
+=head3 
+
+This object represents a router on the IP path towards the destination or the
+destination itself. This is similar to what the C<traceroute> command outputs.
+
+Nmap::Parser::Host::TraceHop objects are obtained through the
+C<all_trace_hops()> and C<trace_hop()> Nmap::Parser::Host methods.
+
+=over 4
+
+=item B<all()>
+
+The Time To Live is the network distance of this hop.
+
+=item B<name()>
+
+The Round Trip Time is roughly equivalent to the "ping" time towards this hop.
+It is not always available (in which case it will be undef).
+
+=item B<elements()>
+
+The known IP address of this hop.
+
+=item B<output()>
+
+The host name of this hop, if known.
+
+=back
+
+=head1 EXAMPLES
+
+=head1 SUPPORT
+
+=head2 Discussion Forum
+
+If you have questions about how to use the module please contact the author below.
+
+=head2 Bug Reports, Enhancements, Merge Requests
+
+Please submit any bugs or feature requests to:
+L<https://github.com/littleurl/XML-NmapParser/issues>
+
+
+=head1 SEE ALSO
+
+nmap, XML::LibXML 
+
+The nmap security scanner homepage can be found at: L<http://www.insecure.org/nmap/>.
+
+=head1 AUTHORS
+
+Paul M Johnson <pjohnson21211@gmail.com>
+but credit to the original author of Nmap-Parser is Anthony Persaud L <http://modernistik.com>
+
+
+=head1 COPYRIGHT
+
+1;
