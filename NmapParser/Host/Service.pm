@@ -1,21 +1,12 @@
 # -------------------------------
-package XML::NmapParser::Host::Service; 
-use base "XML::NmapParser::Host";
-
-our $VERSION = "0.1.2";
-
-use strict;
-use warnings;
-use Carp; 
-use Exporter;
-
-# use parent 'XML::NmapParser::Host'; 
-# require XML::NmapParser;
+package NmapParser::Host::Service; 
+use parent "XML::NmapParser::Host";
 
 my @ISA = qw(XML::NmapParser::Host::Service Exporter);
 
-use vars qw($AUTOLOAD);
+require vars qw($AUTOLOAD);
 # -------------------------------
+our $VERSION = "0.2.0 a";
 
 sub new {
     my $pkg = shift;
@@ -175,89 +166,3 @@ sub port {
 	return $returnValue;	
 }
 
-__END
-
-
-=head1 NAME
-
-NmapParser - parse nmap scan data with perl
-
-=head1 SYNOPSIS
-
-  use Nmap::Parser::Host::Service;
-  my $host = Nmap::Parser::Host::Service->new();
-
-=head1 DESCRIPTION
-
-=head1 OVERVIEW
-
-=head1 METHODS
-
-=head2 Nmap::Parser::Host::Service
-
-This object represents the information collected from a scanned host.
-
-
-=over 4
-
-
-=item B<confidence()>
-
-Returns the confidence level in service detection.
-
-=item B<extrainfo()>
-
-Returns any additional information nmap knows about the service.
-
-=item B<method()>
-
-Returns the detection method.
-
-=item B<name()>
-
-Returns the service name.
-
-=item B<owner()>
-
-Returns the process owner of the given service. (If available)
-
-=item B<port()>
-
-Returns the port number where the service is running on.
-
-=item B<product()>
-
-Returns the product information of the service.
-
-=item B<proto()>
-
-Returns the protocol type of the service.
-
-=item B<rpcnum()>
-
-Returns the RPC number.
-
-=item B<tunnel()>
-
-Returns the tunnel value. (If available)
-
-=item B<fingerprint()>
-
-Returns the service fingerprint. (If available)
- 
-=item B<version()>
-
-Returns the version of the given product of the running service.
-
-=item B<scripts()>
-
-=item B<scripts($name)>
-
-A basic call to scripts() returns a list of the names of the NSE scripts
-run for this port. If C<$name> is given, it returns
-a reference to a hash with "output" and "content" keys for the
-script with that name, or undef if that script was not run.
-The value of the "output" key is the text output of the script. The value of the
-"content" key is a data structure based on the XML output of the NSE script.
-
-=back

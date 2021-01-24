@@ -1,20 +1,18 @@
 # -------------------------------
 package XML::NmapParser; 
 
-use strict;
-use warnings;
-use Carp;
-use XML::LibXML;
+require strict;
+require warnings;
+require Carp;
+require XML::LibXML;
 
-use Exporter;
-
-our $VERSION = "0.4.5 b";  
 use Exporter qw(import);
 
 my @ISA = qw(Exporter EXPORT); 
 
 use vars qw($AUTOLOAD);
 # -------------------------------
+our $VERSION = "0.5.0 a";  
 
 sub new {
     my $pkg = shift;
