@@ -1,12 +1,10 @@
 # -------------------------------
-package NmapParser::Host::Script; 
+package XML::NmapParser::Host::Script; 
 use  parent "XML::NmapParser::Host";
-
-
 
 my @ISA = qw(XML::NmapParser::Host::Script Exporter);
 
-require vars qw($AUTOLOAD);
+use vars qw($AUTOLOAD);
 # -------------------------------
 our $VERSION = "0.2.0 a";
 
