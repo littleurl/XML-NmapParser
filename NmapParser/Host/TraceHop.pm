@@ -2,7 +2,6 @@
 package XML::NmapParser::Host::TraceHop; 
 use parent "XML::NmapParser::Host";
 
-
 my @ISA = qw(XML::NmapParser::Host::TraceHop Exporter);
 
 use vars qw($AUTOLOAD);
