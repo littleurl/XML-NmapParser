@@ -1,21 +1,12 @@
 # -------------------------------
 package XML::NmapParser::Host::OS::osmatch; 
-use base XML::NmapParser::Host::OS;
-
-our $VERSION = "0.1.0a";
-
-use strict;
-use warnings;
-use Carp; 
-use Exporter;
-
-use parent 'XML::NmapParser::Host'; 
-require XML::NmapParser;
+use parent XML::NmapParser::Host::OS;
 
 my @ISA = qw(XML::NmapParser::Host::OS::osmatch Exporter);
 
 use vars qw($AUTOLOAD);
-# -------------------------------osmatch
+# -------------------------------
+our $VERSION = "0.2.0 b";
 
 sub new {
     my $pkg = shift;
