@@ -4,7 +4,7 @@ use parent "XML::NmapParser::Host";
 
 my @ISA = qw(XML::NmapParser::Host::OS Exporter);
 
-require vars qw($AUTOLOAD);
+use vars qw($AUTOLOAD);
 # -------------------------------
 our $VERSION = "0.3.0 a";
 
@@ -22,7 +22,7 @@ sub initialize {
 }
 
 sub all {
-	use NmapParser::Host::OS::osmatch; 
+	use XML::NmapParser::Host::OS::osmatch; 
 	
 	my ($self) = @_;
 	my @ALL;
@@ -43,7 +43,7 @@ sub fingerprint {
 }
 
 sub class { 
-	use NmapParser::Host::OS::osclass; 
+	use XML::NmapParser::Host::OS::osclass; 
 	
 	my ($self) = @_;
 	my @ALL;
