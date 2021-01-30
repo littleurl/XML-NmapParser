@@ -6,7 +6,7 @@ my @ISA = qw(XML::NmapParser::Host::Script Exporter);
 
 use vars qw($AUTOLOAD);
 # -------------------------------
-our $VERSION = "0.2.0 a";
+our $VERSION = "0.2.0 c";
 
 
 sub new {
@@ -41,6 +41,14 @@ sub all {
 }
 
 sub name { 
+
+	my ($self,$port) = @_;
+	my $returnValue = "unknown"; 
+	if ( defined($self->{stem}{id}) ) { $returnValue = $self->{stem}{id}; }
+	return $returnValue;
+} 
+
+sub id { 
 
 	my ($self,$port) = @_;
 	my $returnValue = "unknown"; 
