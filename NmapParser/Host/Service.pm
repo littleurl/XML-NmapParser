@@ -6,7 +6,7 @@ my @ISA = qw(XML::NmapParser::Host::Service Exporter);
 
 use vars qw($AUTOLOAD);
 # -------------------------------
-our $VERSION = "0.2.0 a";
+our $VERSION = "0.3.0 a";
 
 sub new {
     my $pkg = shift;
@@ -23,14 +23,14 @@ sub initialize {
 }
 
 sub name { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = "unknown"; 
 	if ( defined($self->{stem}{service}{name}) ) { $returnValue = $self->{stem}{service}{name}; }
 	return $returnValue;
 }
 
 sub owner { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = "unknown"; 
 	if ( defined($self->{stem}{service}{owner}) ) { $returnValue = $self->{stem}{service}{owner}; }
 	return $returnValue;
@@ -76,19 +76,19 @@ sub cpe {
 }
 
 sub state { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{portid}) ) { $returnValue = $self->{stem}{state}{state}; }
 	return $returnValue;	
 }
 sub reason { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{portid}) ) { $returnValue = $self->{stem}{state}{reason}; }
 	return $returnValue;	
 }
 sub reason_ttl { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{portid}) ) { $returnValue = $self->{stem}{state}{reason_ttl}; }
 	return $returnValue;		
@@ -96,56 +96,56 @@ sub reason_ttl {
 # new calls END 
 
 sub confidence { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{service}{conf}) ) { $returnValue = $self->{stem}{service}{conf}; }
 	return $returnValue;	
 }
 
 sub extrainfo { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{service}{extrainfo}) ) { $returnValue = $self->{stem}{service}{extrainfo}; }
 	return $returnValue;	
 }
 
 sub method { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{service}{method}) ) { $returnValue = $self->{stem}{service}{method}; }
 	return $returnValue;	
 }
 
 sub product { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{service}{product}) ) { $returnValue = $self->{stem}{service}{product};}
 	return $returnValue;
 }
 
 sub version { 	
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{service}{version}) ) { $returnValue = $self->{stem}{service}{version}; }
 	return $returnValue;
 }
 
 sub ostype { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{service}{ostype}) ) { $returnValue = $self->{stem}{service}{ostype}; }
 	return $returnValue;	
 }
 
 sub devicetype { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{service}{devicetype}) ) { $returnValue = $self->{stem}{service}{devicetype}; }
 	return $returnValue;	
 }
 
 sub proto { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{protocol}) ) { $returnValue = $self->{stem}{protocol}; }
 	return $returnValue;
@@ -153,14 +153,14 @@ sub proto {
 
 
 sub tunnel { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{service}{tunnel}) ) { $returnValue = $self->{stem}{service}{tunnel}; }
 	return $returnValue;	
 }
 
 sub port { 
-	my ($self,$port) = @_;
+	my ($self) = @_;
 	my $returnValue = -1; 
 	if ( defined($self->{stem}{portid}) ) { $returnValue = $self->{stem}{portid}; }
 	return $returnValue;	
