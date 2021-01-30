@@ -6,7 +6,7 @@ my @ISA = qw(XML::NmapParser::Host::Service Exporter);
 
 use vars qw($AUTOLOAD);
 # -------------------------------
-our $VERSION = "0.3.0 a";
+our $VERSION = "0.3.0 c";
 
 sub new {
     my $pkg = shift;
@@ -151,7 +151,6 @@ sub proto {
 	return $returnValue;
 }
 
-
 sub tunnel { 
 	my ($self) = @_;
 	my $returnValue = -1; 
@@ -166,3 +165,18 @@ sub port {
 	return $returnValue;	
 }
 
+sub protocol { 
+	my ($self) = @_;
+	my $returnValue = -1; 
+	if ( defined($self->{stem}{protocol}) ) { $returnValue = $self->{stem}{protocol}; }
+	return $returnValue;
+}
+
+sub protocol { 
+	my ($self) = @_;
+	my $returnValue = -1; 
+	if ( defined($self->{stem}{protocol}) ) { $returnValue = $self->{stem}{protocol}; }
+	return $returnValue;
+}
+
+ 
