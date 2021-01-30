@@ -24,8 +24,6 @@ sub initialize {
     $self->{Host} = shift;
 }
 
-
-
 # passed
 sub hostname { 
 	my ($self,$index) = @_;
@@ -101,7 +99,6 @@ sub traceroute {
 	} 
 
 	return @traceoute; 
-
 } 
 
 sub all_trace_hops { 
@@ -178,16 +175,12 @@ sub hostscripts {
 	return @returnValue;
 }
 
-
-
-
 sub trace_proto { 
 	my ($self) = @_;
 	my $returnValue = undef;
 	if ( defined($self->{Host}{trace}{proto})) { $returnValue = $self->{Host}{trace}{proto}; } 
 	return $returnValue;		
 }
-
 
 sub tcp_service {
 	use XML::NmapParser::Host::Service; 
@@ -215,8 +208,6 @@ sub udp_service {
 	return $SERVICE; 
 
 }
-
-
 
 sub mac_vendor { 
 	my ($self) = @_;
@@ -364,14 +355,6 @@ sub status {
 	if ( defined($self->{Host}{status}{state}) ) { $returnValue = $self->{Host}{status}{state};  } 
 	return $returnValue;	
 }
-
-#sub state { 
-#	my ($self) = @_;
-#	my $returnValue = "unknown"; 
-#	
-#	return $returnValue;
-#}
-
 	 	 
 sub addr { 
 	my ($self) = @_;
